@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/resposive/responsive_layout_screen.dart';
 import 'package:instagram_clone/screen/login_screen.dart';
+import 'package:instagram_clone/screen/signup_screen.dart';
 
 import 'resposive/mobile_screen_layout.dart';
 import 'resposive/web_screen_layout.dart';
@@ -17,15 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Instagram Clone',
-      theme: new ThemeData(
-        scaffoldBackgroundColor: mobileBackgroundColor,
-      ),
-      // home: ResponsiveLayout(
-      //     mobileScreenLayout: MobileScreenLayout(),
-      //     webScreenLayout: WebScreenLayout()),
-      home: LoginScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Instagram Clone',
+        theme: new ThemeData(
+          scaffoldBackgroundColor: mobileBackgroundColor,
+        ),
+        // home: ResponsiveLayout(
+        //    Log mobileScreenLayout: MobileScreenLayout(),
+        //     webScreenLayout: WebScreenLayout()),
+        home: SignUp());
   }
 }
