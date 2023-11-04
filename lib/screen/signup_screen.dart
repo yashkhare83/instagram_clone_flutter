@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:instagram_clone/resources/auth_methods.dart';
 
 import '../widgets/text_field_input.dart';
 
@@ -33,11 +34,13 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Container(
           padding: EdgeInsets.fromLTRB(16, 80, 16, 0),
           width: 500.0,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Flexible(
                 flex: 5,
@@ -140,7 +143,13 @@ class _SignUpState extends State<SignUp> {
               Flexible(
                   flex: 1,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      final res = await AuthMethods().signUpUser(
+                          email: emailController.text,
+                          password: passwordController.text,
+                          username: userNameController.text,
+                          bio: bioController.text);
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
